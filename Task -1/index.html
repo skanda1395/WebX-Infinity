@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>WedMyVows</title>
+</head>
+<body>
+  
+  <header>
+    <a href="/" id="brand-name">WedMyVows</a>
+    <ul id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li id="dropdown-menu">
+        <a href="#">Vendors
+          <img id="arrow_down_icon" src="./assets/arrow_down_icon.svg" alt="Arrow Down Icon">
+        </a>
+        <div id="dropdown-content">
+          dropdown list here... 
+        </div>
+      </li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#">Real Weddings</a></li>
+      <li><a href="#">Premium Vendors</a></li>
+    </ul>
+    <div class="header-icons">
+      <a href="#"><img src="./assets/search_icon.svg" alt="Search Icon"></a>
+      <a href="#"><img src="./assets/profile_icon.svg" alt="Profile Icon"></a>
+    </div>
+  </header>
+
+  <main>
+    <div id="search_box">
+      <p>Your Wedding Your Way</p>
+      <!-- wedding vendor list -->
+      <section id="inputs">
+        <input id="vendor_box" list="values" placeholder="Search for wedding vendor"/>
+        <datalist id="values">
+            <option value="Vendor 1">
+          <option value="Vendor 2">
+          <option value="Vendor 3">
+        </datalist>
+        <!-- wedding vendor list -->
+        <input id="city_box" list="values_1" placeholder="City"/>
+        <datalist id="values_1">
+            <option value="City 1">
+          <option value="City 2">
+          <option value="City 3">
+        </datalist>
+        <button id="find">Find</button>
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>

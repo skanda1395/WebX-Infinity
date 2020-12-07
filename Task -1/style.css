@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* root styles */
+* {
+  box-sizing: border-box;
+  --header-height: 70px;
+  --primary-color: #F1C1C4
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* header styles */
+header {
+  background: var(--primary-color);
+  padding: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#brand-name {
+  font-family: 'Oleo Script', cursive;
+  font-size: 2.25em;
+}
+
+#nav-links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+#nav-links li {
+  list-style-type: none;
+  font-weight: 500;
+  font-size: 1.25em;
+  margin: 0 0.8em;
+}
+
+.header-icons a {
+  margin-left: 1.5em;
+}
+
+#arrow_down_icon {
+  position: relative;
+  top: -1px;
+  left: 3px;
+}
+
+#dropdown-menu:hover #arrow_down_icon {
+  transform: rotate(180deg)
+}
+
+#arrow_down_icon {
+  transition: all 0.23s ease-in-out;
+}
+
+/* dropdown menu styles  */
+#dropdown-menu {
+  position: relative;
+}
+
+#dropdown-menu:hover #dropdown-content {
+  display: block;
+}
+
+#dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff; 
+  z-index: 1;
+}
+
+
+/* main content styles */
+main {
+  margin-top: var(--header-height);
+  background-image: url("./assets/home_img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #333;
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
+
+main p {
+  color: #fff;
+  font-family: 'Oleo Script', cursive;
+  font-size: 4rem;
+  margin: 0;
+  margin-bottom: 13px;
+}
+
+#search_box {
+  display: grid;
+  place-items: center;
+}
+
+#inputs {
+  display: flex;
+}
+
+#search_box input, #find {
+  padding: 0.5em;
+  height: 52px;
+  font-size: 1.125rem;
+}
+
+#vendor_box {
+  width: 350px;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#city_box {
+  width: 150px;
+  border: none;
+}
+
+#find {
+  width: 120px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  right: 9px;
+}
