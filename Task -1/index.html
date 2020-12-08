@@ -13,15 +13,81 @@
     <ul id="nav-links">
       <li><a href="#">Home</a></li>
       <li id="dropdown-menu">
-        <a href="#">Vendors
+        <a href="#" id="dropdown-trigger">Vendors
           <img id="arrow_down_icon" src="./assets/arrow_down_icon.svg" alt="Arrow Down Icon">
         </a>
         <div id="dropdown-content">
-          dropdown list here... 
+          <div id="dropdown-list">
+            <div class="col col-1">
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/camera.svg" alt="Camera Icon">
+                Wedding Photographers
+              </div>
+              <div class="col-item">
+                <img id="lipstick-icon" src="./assets/dropdown_icons/lipstick.svg" alt="Lipstick Icon">
+                Makeup Artists
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/venue.svg" alt="Wedding Venue Icon">
+                Wedding Venues
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/groom wear.svg" alt="Groom Wear Icon">
+                Groom Wear
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/bridal wear.svg" alt="Bridal Wear Icon">
+                Bridal Wear
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/mehendi artists.svg" alt="Mehendi Hand Icon">
+                Mehendi Artists
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/caterers.svg" alt="Spoons and Forks Icon">
+                Caterers
+              </div>
+            </div>
+            <div class="col col-2">
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/decorations.svg" alt="Party Hat Icon">
+                Decorations
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/invitation.svg" alt="Invite Card Icon">
+                Invitations
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/event_planner.svg" alt="Calender Icon">
+                Event Planner
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/cakes.svg" alt="Cake Icon">
+                Cakes
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/pandits.svg" alt="Pandit Icon">
+                Pandit
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/dj.svg" alt="Music Note Icon">
+                DJ / Live Band
+              </div>
+              <div class="col-item">
+                <img src="./assets/dropdown_icons/rings.svg" alt="Ring Icon">
+                Jewellery & Accessories
+              </div>
+            </div>
+          </div>
+          <div id="dropdown-cta">
+            <hr>
+            <span>Are you a vendor?</span>
+            <button>Register</button>
+          </div>
         </div>
       </li>
       <li><a href="#">Blogs</a></li>
-      <li><a href="#">Real Weddings</a></li>
+      <li><a href="#real-weddings">Real Weddings</a></li>
       <li><a href="#">Premium Vendors</a></li>
     </ul>
     <div class="header-icons">
@@ -30,7 +96,7 @@
     </div>
   </header>
 
-  <main>
+  <div id="presentation">
     <div id="search_box">
       <p>Your Wedding Your Way</p>
       <!-- wedding vendor list -->
@@ -51,7 +117,59 @@
         <button id="find">Find</button>
       </section>
     </div>
-  </main>
+    <div id="profile-icon"></div>
+  </div>
 
+  <div id="real-weddings">
+    <div class="col col-1">
+      <span class="name">Aditi & Raj</span>
+      <img src="./assets/wed_img/wed_img-1.png" alt="wed_img-1">
+      <img src="./assets/wed_img/wed_img-2.png" alt="wed_img-2">
+      <img src="./assets/wed_img/wed_img-3.png" alt="wed_img-3">
+      <span class="location">Bangalore, Karnataka</span>
+    </div>
+    <div class="col col-2">
+      <span class="name">Ananya & Rohit</span>
+      <img src="./assets/wed_img/wed_img-4.png" alt="wed_img-4">
+      <img src="./assets/wed_img/wed_img-5.png" alt="wed_img-5">
+      <img src="./assets/wed_img/wed_img-6.png" alt="wed_img-6">
+      <span class="location">Bangalore, Karnataka</span>
+    </div>
+    <div class="col col-3">
+      <span class="name">Charmy & Nikhil</span>
+      <img src="./assets/wed_img/wed_img-7.png" alt="wed_img-7">
+      <img src="./assets/wed_img/wed_img-8.png" alt="wed_img-8">
+      <img src="./assets/wed_img/wed_img-9.png" alt="wed_img-9">
+      <span class="location">Bangalore, Karnataka</span>
+    </div>
+    <div class="col col-4">
+      <form action="#">
+        <fieldset id="fieldset">
+          <legend>Looking For</legend>
+          <select name="vendors" id="vendors">
+            <option value="vendor_1">Vendor 1</option>
+            <option value="vendor_2">Vendor 2</option>
+            <option value="vendor_3">Vendor 3</option>
+          </select>
+          <select name="city" id="city_search">
+            <option value="city_1">City 1</option>
+            <option value="city_2">City 2</option>
+            <option value="city_3">City 3</option>
+          </select>
+          <input type="submit" value="Submit">
+        </fieldset>
+      </form>
+      <div id="extra_info">
+        <h3>Are you a Wedding Vendor?</h3>
+        <p>Join 1000+ vendors who have successfully boosted their wedding service business with WedMyVows</p>
+        <button>Join Now ></button>
+        <h4>Follow us on our social media</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="box"></div> -->
+
+  <script src="./main.js"></script>
 </body>
 </html>

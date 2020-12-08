@@ -5,7 +5,8 @@
 * {
   box-sizing: border-box;
   --header-height: 70px;
-  --primary-color: #F1C1C4
+  --primary-color: #f1c1c4;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,6 +24,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 }
 
 header a {
@@ -59,33 +61,67 @@ header a {
   left: 3px;
 }
 
-#dropdown-menu:hover #arrow_down_icon {
+/* #dropdown-menu:hover #arrow_down_icon {
   transform: rotate(180deg)
 }
 
 #arrow_down_icon {
   transition: all 0.23s ease-in-out;
-}
+} */
 
 /* dropdown menu styles  */
 #dropdown-menu {
   position: relative;
 }
 
-#dropdown-menu:hover #dropdown-content {
-  display: block;
-}
-
 #dropdown-content {
   display: none;
   position: absolute;
+  top: 50px;
   background: #fff; 
-  z-index: 1;
+  padding: 25px 0;
+  font-size: 1.125rem;
+  width: 654px;
+  font-weight: 300;
+}
+
+#dropdown-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.col .col-item {
+  margin-bottom: 12px;
+}
+
+.col-item img {
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}
+
+#lipstick-icon {
+  width: 15px;
+  height: 20px;
+}
+
+#dropdown-cta {
+  width: 90%;
+  margin: auto;
+  text-align: right;
+}
+
+#dropdown-cta button {
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 
-/* main content styles */
-main {
+/* #presentation content styles */
+#presentation {
   margin-top: var(--header-height);
   background-image: url("./assets/home_img.png");
   background-repeat: no-repeat;
@@ -97,7 +133,7 @@ main {
   place-items: center;
 }
 
-main p {
+#presentation p {
   color: #fff;
   font-family: 'Oleo Script', cursive;
   font-size: 4rem;
@@ -136,7 +172,93 @@ main p {
   width: 120px;
   background: var(--primary-color);
   border: none;
-  border-radius: 10px;
-  position: relative;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   right: 9px;
+}
+
+#presentation #profile-icon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #c4c4c4;
+  border-radius: 50%;
+  bottom: -0.2%;
+  left: 45%;
+}
+
+/* real-weddings section styles */
+#real-weddings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 75px 0;
+  padding: 0 25px;
+  grid-column-gap: 20px;
+}
+
+#real-weddings img {
+  width: 300px;
+  height: auto;
+  margin: 10px 0;
+}
+
+#real-weddings .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid lightgrey;
+  border-top: none;
+  box-shadow: 5px 5px 5px lightgrey;
+}
+
+#real-weddings .col .name, #real-weddings .col .location {
+  margin: 10px 0;
+}
+
+#box {
+  height: 100px;
+}
+
+#real-weddings .col-4 {
+  border: none;
+  box-shadow: none;
+  width: 100%;
+}
+
+#real-weddings .col-4 form {
+  width: 100%;
+}
+
+#fieldset legend {
+  font-size: 1.875rem;
+  color: var(--primary-color);
+}
+
+#fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary-color);
+}
+
+#fieldset select {
+  height: 1.8rem;
+  margin: 1em 0;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+#fieldset input[type="submit"], #extra_info button  {
+  width: 5rem;
+  padding: 7px 0;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: #fff;
+}
+
+#extra_info {
+  width: 100%;
 }
