@@ -61,13 +61,24 @@ header a {
   left: 3px;
 }
 
-/* #dropdown-menu:hover #arrow_down_icon {
-  transform: rotate(180deg)
+#collapsable-menu {
+  width: 100%;
+  background: #D8ADB0;
+  padding: 0 10px;
+  display: none;
+  justify-content: space-between;
+  margin: 10px 0;
 }
 
-#arrow_down_icon {
-  transition: all 0.23s ease-in-out;
-} */
+#collapsable-menu h3 {
+  color: white;
+  margin: 10px 0;
+}
+
+#collapsable-menu img {
+  width: 32px;
+  height: auto;
+}
 
 /* dropdown menu styles  */
 #dropdown-menu {
@@ -119,7 +130,6 @@ header a {
   border-radius: 10px;
 }
 
-
 /* #presentation content styles */
 #presentation {
   margin-top: var(--header-height);
@@ -129,6 +139,7 @@ header a {
   background-size: cover;
   background-color: #333;
   height: 80vh;
+  width: 100%;
   display: grid;
   place-items: center;
 }
@@ -139,6 +150,7 @@ header a {
   font-size: 4rem;
   margin: 0;
   margin-bottom: 13px;
+  text-align: center;
 }
 
 #search_box {
@@ -148,6 +160,7 @@ header a {
 
 #inputs {
   display: flex;
+  max-width: 90%;
 }
 
 #search_box input, #find {
@@ -157,7 +170,7 @@ header a {
 }
 
 #vendor_box {
-  width: 350px;
+  max-width: 350px;
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -169,7 +182,7 @@ header a {
 }
 
 #find {
-  width: 120px;
+  width: 100px;
   background: var(--primary-color);
   border: none;
   border-top-right-radius: 10px;
@@ -189,7 +202,7 @@ header a {
 
 /* real-weddings section styles */
 #real-weddings {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(4, 1fr);
   margin: 75px 0;
   padding: 0 25px;
@@ -211,6 +224,8 @@ header a {
   border: 1px solid lightgrey;
   border-top: none;
   box-shadow: 5px 5px 5px lightgrey;
+  padding: 0 20px;
+  margin-bottom: 10px;
 }
 
 #real-weddings .col .name, #real-weddings .col .location {
@@ -261,4 +276,49 @@ header a {
 
 #extra_info {
   width: 100%;
+}
+
+/* media queries */
+@media only screen and (max-width: 992px) {
+  body {
+    font-size: 13px;
+  }
+  header {
+    flex-direction: column;
+  }
+  #collapsable-menu {
+    display: flex;
+  }
+  #nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #nav-links li {
+    border-bottom: 1px solid rgb(120 120 120 / 20%);
+    margin: 0;
+    padding: 10px;
+  }
+  #header-icons, #nav-links {
+    margin: 10px 0; 
+  }
+  #presentation p {
+    font-size: 2.5rem;
+  }
+  #inputs {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  #inputs input, #inputs button {
+    border-radius: 10px;
+    margin: 5px 0;
+  }
+  #presentation {
+    margin-top: 160px;
+  }
+  #real-weddings {
+    flex-direction: column;
+  }
 }
