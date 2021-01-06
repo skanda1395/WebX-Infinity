@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <script src="https://use.fontawesome.com/c2b9c0f4b3.js"></script>
+</head>
+<style>
+
+   * {
+    box-sizing: border-box;
+   }
+
+  .table {
+    width: 100%;
+  }
+
+  .table td {
+    text-align: center;
+  }
+
+  .table tbody th:hover, .table tbody td:hover {
+    color: #414552;
+    background: #fff;
+    border-radius: 5px;
+  }
+
+  .datepicker-days {
+    padding: 20px;
+    background: #414552;
+    color: #fff;
+    max-width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  .datepicker-days .prev, .datepicker-days .next {
+    padding: 30px 0;
+    font-size: 12px;
+  }
+
+  .datepicker-days .table tr th.dow {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 12px 0;
+  }
+
+  .datepicker-days .table tr td.day {
+    font-size: 13px;
+    padding: 20px;
+  } 
+
+  .datepicker-switch {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  
+</style>
+<body>
+
+  <div class="datepicker-days">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></th>
+          <th colspan="5" class="datepicker-switch">December 2020</th>
+          <th class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></th>
+        </tr>
+        <tr>
+          <th class="dow">Su</th>
+          <th class="dow">Mo</th>
+          <th class="dow">Tu</th>
+          <th class="dow">We</th>
+          <th class="dow">Th</th>
+          <th class="dow">Fr</th>
+          <th class="dow">Sa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day">28</td>
+          <td class="day">29</td>
+          <td class="day">30</td>
+          <td class="day">31</td>
+          <td class="day">1</td>
+          <td class="day">2</td>
+          <td class="day">3</td>
+        </tr>
+        <tr>
+          <td class="day">4</td>
+          <td class="day">5</td>
+          <td class="day">6</td>
+          <td class="day">7</td>
+          <td class="day">8</td>
+          <td class="day">9</td>
+          <td class="day">10</td>
+        </tr>
+        <tr>
+          <td class="day">11</td>
+          <td class="day">12</td>
+          <td class="day">13</td>
+          <td class="day">14</td>
+          <td class="day">15</td>
+          <td class="day">16</td>
+          <td class="day">17</td>
+        </tr>
+        <tr>
+          <td class="day">18</td>
+          <td class="day">19</td>
+          <td class="day">20</td>
+          <td class="day">21</td>
+          <td class="day">22</td>
+          <td class="day">23</td>
+          <td class="day">24</td>
+        </tr>
+        <tr>
+          <td class="day">25</td>
+          <td class="day">26</td>
+          <td class="day">27</td>
+          <td class="day">28</td>
+          <td class="day">29</td>
+          <td class="day">30</td>
+          <td class="day">1</td>
+        </tr>
+        <tr>
+          <td class="day">2</td>
+          <td class="day">3</td>
+          <td class="day">4</td>
+          <td class="day">5</td>
+          <td class="day">6</td>
+          <td class="day">7</td>
+          <td class="day">8</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
