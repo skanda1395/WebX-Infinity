@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>ZenMinds | Homepage</title>
+    <style>
+        :root {
+            --primary-color: #b89b90;
+        }
+
+        .brand-logo h4 {
+            display: inline;
+            font-weight: bold;
+        }
+        .nav-wrapper .nav-cta {
+            font-size: 1.31rem;
+            font-style: italic;
+            font-weight: lighter;   
+        }
+        #appointment:hover {
+            background: var(--primary-color) !important;
+            color: white !important;
+        }
+        .tab > a {
+            color: black !important;
+            font-size:  1rem !important;
+        }
+        .tabs-container {
+            border: 1px solid lightgray;
+        }
+        .tab-hover:hover {
+            color: var(--primary-color) !important; 
+            border-top: 1px solid var(--primary-color);
+        }
+        .carousel {
+            background: var(--primary-color);
+        }
+        .carousel-item {
+            position: relative;
+        }
+        .carousel-item-content {
+            color: white;
+            position: absolute;
+            top: 10%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="">
+        <nav class="nav-extended transparent">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo black-text"><i class="material-icons">healing</i><h4>ZenMinds</h4></a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="black-text nav-cta">Call now: +1 093 31 32 321</li>
+                    <li><a  href="#" id="appointment" class="black-text waves-effect-light btn-flat btn">Make an appointment</a></li>
+                </ul>
+            </div>
+            <div class="tabs-container">
+                <div class="nav-content container">
+                    <div class="tabs">
+                        <li class="tab tab-hover"><a href="#" class="active" style="color: var(--primary-color) !important">Home</a></li>
+                        <li class="tab tab-hover"><a href="#" class="tab">Features</a></li>
+                        <li class="tab tab-hover"><a href="#">Services</a></li>
+                        <li class="tab tab-hover"><a href="#">News</a></li>
+                        <li class="tab tab-hover"><a href="#">Blogs</a></li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-nav">
+            <li class="black-text nav-cta">Call now: +1 093 31 32 321</li>
+            <li><a  href="#" id="appointment" class="black-text waves-effect-light btn-flat btn">Make an appointment</a></li>
+        </ul>
+    </header>
+
+    <!-- Carousel -->
+    <div class="carousel carousel-slider">
+        <div class="carousel-item">
+            <img src="carousel/carousel_1.jpg" alt="Carousel-1">
+            <div class="carousel-item-content">
+                <h1>Happy Family<h1>
+                <h2>Impossible Without Trust</h2>
+            </div>
+        </div>
+        <div class="carousel-item"><img src="carousel/carousel_2.jpg" alt="Carousel-2"></div>
+        <div class="carousel-item"><img src="carousel/carousel_3.jpg" alt="Carousel-3"></div>
+    </div>
+
+
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Sidenav init
+            let nav_el = document.querySelector(".sidenav");
+            let nav_instances = M.Sidenav.init(nav_el, {});
+            
+            // Carousel init
+            let carousel_el = document.querySelector(".carousel");
+            let carousel_instances = M.Carousel.init(carousel_el, {
+                fullWidth: true,
+                indicators: true,
+            });
+
+            let slider_init = setInterval(() => {
+                carousel_instances.next();
+            }, 5000);
+        })
+
+        
+
+    </script>
+</body>
+</html>
