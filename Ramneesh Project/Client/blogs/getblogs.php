@@ -1,13 +1,18 @@
 <?php
     require_once "./db_connect.php";
 
-    $page = 6 * (int) $_GET["page"];
+    $page = (int) $_GET["page"];
+    $x = (6 * $page) - 5; 
 
-    // $query = "SELECT * FROM blogs WHERE id =" $page . " LIMITk 6";
+    $query = "SELECT * FROM blogs WHERE id>= $x LIMIT 6";
     $statement = $pdo->prepare($query);
     $statement->execute();
     $blogs = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<?php if(!sizeof($blogs)): ?>
+    <h4 class="center-align">You've hit the blog-bottom</h4>
+<?php endif; ?>
 
 <?php foreach ($blogs as $i => $blog): ?>
     <?php $path = "./blog_images/blog_" . rand(1, 5) . ".jpg"; ?>

@@ -2,9 +2,21 @@
 
   require_once "./db_connect.php";
 
-  $statement = $pdo->prepare("SELECT * FROM blogs LIMIT 6");
+  $page = $_GET["page"] ?? 1;
+  $x = (6 * $page) - 5; 
+  $keyword = $_GET["search"] ?? "";
+
+  if ($keyword) {
+    $statement = $pdo->prepare("SELECT * FROM blogs WHERE title like :keyword");
+    $statement->bindValue(":keyword", "%$keyword%");
+  } 
+  else {
+    $statement = $pdo->prepare("SELECT * FROM blogs WHERE id>=$x LIMIT 6");
+  }
+
   $statement->execute();
   $blogs = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -44,6 +56,10 @@
 
     #box-view, #table-view {
       transition: display 1s;
+    } 
+
+    #search-container {
+      margin-bottom: 0;
     }
 
   </style>
@@ -53,9 +69,22 @@
   <main class="container">
     <h1 class="red-text">All Blogs</h1>
 
+      <form action="" method="GET" class="row valign-wrapper" id="search-container">
+        <div class="input-field col s10 offset-m2">
+          <i class="material-icons prefix">search</i>
+          <input type="text" name="search" class="validate" value="<?php echo $keyword; ?>">
+          <label for="search">Search Blogs...</label>
+        </div>
+        <div class="input-field col s2">
+          <button class="btn-small waves-effect waves-light" type="submit">
+            <i class="material-icons">send</i>
+          </button>
+        </div>
+      </form>
+
     <div class="row" id="box-view">
       <?php foreach ($blogs as $i => $blog): ?>
-        <?php $path = "./blog_images/blog_" . rand(1, 5) . ".jpg"; ?>
+        <?php $path = "./blog_images/blog_" . rand(1, 7) . ".jpg"; ?>
         <div class="col s12 m6">
           <div class="card hoverable small">
             <div class="card-image">
