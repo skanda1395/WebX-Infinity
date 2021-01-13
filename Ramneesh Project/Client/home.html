@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>ZenMinds | Homepage</title>
@@ -44,10 +46,72 @@
             position: relative;
         }
         .carousel-item-content {
+            font-family: 'Source Sans Pro', sans-serif;
             color: white;
             position: absolute;
             top: 10%;
+            left: 20%
         }
+        .carousel-item-content .htags {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .carousel-item .carousel-item-content  p {
+            margin: 20px 0;
+            font-size: 2rem !important;
+        }
+        .carousel-content-p {
+            border-left: 1px solid white; 
+        }
+        .carousel-item-content #content-p {
+            font-size: 1rem !important;
+            padding-left: 10px;
+        }
+        .carousel-item-content  a{
+            margin: 20px 0;
+        }
+        .cat-img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 25px;
+        }
+        #categories {
+            margin-top: 25px;
+            padding: 10px 0;
+        }
+        .cat-content li p {
+            margin-bottom: 25px;
+        }
+        .ther_img {
+            width: 100%;
+            height: auto
+        }
+        .parallax-container {
+            display: flex;
+            align-items: center;
+            height: 350px;
+        }   
+        .parallax-container h2 {
+            font-size: 2.56rem !important;
+        }
+        .parallax-container a {
+            margin: 25px 0;
+        }
+        #certificates-section, #latest-blogs {
+            padding: 32px 0;
+            border-bottom: 1px solid lightgray;
+        }
+        #contact-section i {
+            position: relative;
+            top: 3px;
+            right: 3px;
+        }
+        #contact-section {
+            padding: 10px 0;
+        }
+        footer {
+            background: #2d2d2d !important;
+        }  
     </style>
 </head>
 <body>
@@ -81,17 +145,246 @@
     </header>
 
     <!-- Carousel -->
-    <div class="carousel carousel-slider">
+    <div class="carousel carousel-slider hide-on-small-only">
         <div class="carousel-item">
             <img src="carousel/carousel_1.jpg" alt="Carousel-1">
             <div class="carousel-item-content">
-                <h1>Happy Family<h1>
-                <h2>Impossible Without Trust</h2>
+                <h1 class="grey-text text-lighten-1 htags">Happy Family</h1>
+                <p class="">Impossible Without Trust</p>
+                <p id="content-p" class="carousel-content-p">Lorem ipsum dolor sit amet consectetur adipisicing eli</p>
+                <a class="waves-effect waves-light btn white black-text">Book Session</a>
             </div>
         </div>
-        <div class="carousel-item"><img src="carousel/carousel_2.jpg" alt="Carousel-2"></div>
-        <div class="carousel-item"><img src="carousel/carousel_3.jpg" alt="Carousel-3"></div>
+        <div class="carousel-item"><img src="carousel/carousel_2.jpg" alt="Carousel-2">
+            <div class="carousel-item-content">
+                <h1 class="grey-text text-lighten-1 htags">Think Positive</h1>
+                <p class="">Attitude is Everything</p>
+                <p id="content-p" class="carousel-content-p">Lorem ipsum dolor sit amet consectetur adipisicing eli</p>
+                <a class="waves-effect waves-light btn white black-text">Book Session</a>
+            </div>
+        </div>
+        <div class="carousel-item"><img src="carousel/carousel_3.jpg" alt="Carousel-3">
+            <div class="carousel-item-content">
+                <h1 class="grey-text text-lighten-1 htags">Having Depression?</h1>
+                <p class="">Avoid Self-denial</p>
+                <p id="content-p" class="carousel-content-p">Lorem ipsum dolor sit amet consectetur adipisicing eli</p>
+                <a class="waves-effect waves-light btn white black-text">Book Session</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Categories -->
+    <section id="categories" class="container">
+        <div class="row">
+            <div class="col s12 l4">
+                <img src="assets/cat1.jpg" alt="cat-img-1" class="cat-img">
+                <div class="cat-content">
+                    <ul>
+                        <li>
+                            <h5>Stress Management</h5>
+                            <p class="grey-text lighten-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </li>
+                        <li>
+                            <h5>Anxiety</h5>
+                            <p class="grey-text lighten-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <img src="assets/cat2.jpg" alt="cat-img-2" class="cat-img">
+                <div class="cat-content">
+                    <ul>
+                        <li>
+                            <h5>Depression</h5>
+                            <p class="grey-text lighten-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </li>
+                        <li>
+                            <h5> Executive Coaching</h5>
+                            <p class="grey-text lighten-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <img src="assets/cat3.jpg" alt="cat-img-3" class="cat-img">
+                <div class="cat-content">
+                    <ul>
+                        <li>
+                            <h5>Stress Management</h5>
+                            <p class="grey-text lighten-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </li>
+                        <li>
+                            <h5>Anxiety</h5>
+                            <p class="grey-text lighten-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doc Intro -->
+    <section id="intro">
+        <div class="row">
+            <div class="col s12 l5 offset-l1 center-align">
+                <h4>Hello, I’m Doctor Baba Ramdev 👨‍⚕️</h4>
+                <p class="grey-text lighten-2">Expert Clinical Psychologist in Bangalore</p>
+                <p>Lorem Ipsum is simply text of the Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply text of thetypesetting Ipsum is simply text of the stry simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply text of the Lorem Ipsum is  simply my text of the printing and Ipsum is simply text of the Ipsum is simply text of thetypesetting Ipsum is simply text.</p>
+                <div class="call-btn">
+                    <h5>+91 093 34 25 123</h5>
+                    <a class="waves-effect waves-light btn" style="background: var(--primary-color); margin-bottom: 10px">
+                        <i class="material-icons left">call</i>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col s12 l5">
+                <img class="ther_img" src="assets/ramdev.jpg" alt="Therapist Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Container -->
+    <section class="parallax-container white-text center-align">
+        <div class="parallax"><img src="assets/parallax_img.jpg" alt="Parallax Image"></div>
+        <div class="parallax-content container">
+            <h2 class="white-text center-align">Therapy with Dr. Baba Ramdev</h2>
+            <p class="grey-text text-lighten-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>Etiam sodales aliquam massa, sit amet fermentum diam ornare vitae. Praesent dictum nisi nec velit auctor aliquet. Vestibulum vitae pellentesque metus. Aliquam eu mollis lacus. Donec a venenatis odio, blandit ultricies urna. Vestibulum eget odio tortor.</h6>
+            <a class="waves-effect waves-light btn white btn-flat">Free Consultation via Skype</a>
+        </div>
+    </section>
+
+    <!-- Certificates & Verifications -->
+    <section id="certificates-section" class="center-align">
+        <h3>Certificates & Verifications</h3>
+        <p class="grey-text lighten-2">Baba Ramdev is highly verified and certificated practicing psychologist</p>
+        <div class="certs">
+            <img src="assets/cert_1.jpg" alt=cert-1>
+            <img src="assets/cert_2.jpg" alt=cert-2>
+            <img src="assets/cert_3.jpg" alt=cert-3>
+            <img src="assets/cert_4.jpg" alt=cert-4>
+        </div>
+    </section>
+    
+    
+    <!-- Latest Blogs -->
+    <section id="latest-blogs" class="container">
+        <h3 class="center-align">Checkout Our Expert’s Latest Blogs</h3>
+        <p class="center-align grey-text lighten-2">Interesting news and articles about modern psychology</p>
+        <!-- Blogs List -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="card small hoverable">
+                    <div class="card-image">
+                        <img src="blogs/blog_images/blog_1.jpg" alt="blog-img-1">
+                        <span class="card-title">Grow Your Mind</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, animi, soluta itaque id vel ipsam sed, iusto quos expedita laborum voluptate explicabo laboriosam ducimus vero quaerat nulla quibusdam consequatur qui!</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card small hoverable">
+                    <div class="card-image">
+                        <img src="blogs/blog_images/blog_2.jpg" alt="blog-img-2">
+                        <span class="card-title">Keep Noise Out</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, animi, soluta itaque id vel ipsam sed, iusto quos expedita laborum voluptate explicabo laboriosam ducimus vero quaerat nulla quibusdam consequatur qui!</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card small hoverable">
+                    <div class="card-image">
+                        <img src="blogs/blog_images/blog_3.jpg" alt="blog-img-3">
+                        <span class="card-title">Step Therapy</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, animi, soluta itaque id vel ipsam sed, iusto quos expedita laborum voluptate explicabo laboriosam ducimus vero quaerat nulla quibusdam consequatur qui!</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact-section -->
+    <section id="contact-section">
+        <div class="row container">
+            <div class="col s12 m3 center-align">
+                <img src="assets/logo-bottom1.png" alt="image">
+            </div>
+            <div class="col s12 m3 center-align">
+                <div>
+                    <h5>
+                        <i class="material-icons">location_city</i>Visit Me</h5>
+                    <p>200 Broadway Av <br>
+                        Manhattan 5024 <br>
+                        New York
+                    </p>
+                </div>
+            </div>
+            <div class="col s12 m3 center-align">
+                <div>
+                    <h5><i class="material-icons">access_time</i>Open Hours</h5>
+                    <p>Mon-Fri: 10:00 – 16:00 <br>
+                        Sat: 10:00 – 14:00 <br>
+                        Sun: Closed 
+                    </p>
+                </div>
+            </div>
+            <div class="col s12 m3 center-align">
+                <div>
+                    <h5><i class="material-icons">chat_bubble_outline</i>Let's Talk</h5>
+                    <p>+011 765 4321 <br>
+                        +012 345 6789 <br>
+                        psycho@example.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">About</h5>
+              <p class="grey-text text-lighten-4">About
+                Lorem Ipsum is simply text of the Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply text of the Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing and typesetting industry.
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Navigation</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Support Forum</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Theme Documentation</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Help and Support</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2021 ZenMinds Pvt. Ltd.
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+          </div>
+        </div>
+      </footer>
 
 
 
@@ -111,13 +404,16 @@
                 indicators: true,
             });
 
+            // Set Interval for Carousal Images            
             let slider_init = setInterval(() => {
                 carousel_instances.next();
             }, 5000);
-        })
 
+            // Parallax Init
+            let elems = document.querySelectorAll('.parallax');
+            let instances = M.Parallax.init(elems, {});
         
-
+        })
     </script>
 </body>
 </html>
