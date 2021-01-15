@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta Person 2="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Dashboard</title>
+</head>
+<style>
+  
+</style>
+<body>
+
+  <main class="container">
+
+    <h2 class="red-text">Submitted PHQs</h2>
+     
+    <ul class="collapsible">
+      <li class="collapsible-item">
+        <div class="collapsible-header">
+          <i class="material-icons">person</i>Person 1
+        </div>
+        <div class="collapsible-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur dolores eius, voluptatibus odio aliquam magnam quia rem sunt quollitia, fugit sit.
+        </div
+      </li>
+      <li class="collapsible-item">
+        <div class="collapsible-header"><i class="material-icons">person</i>Person 2</div>
+        <div class="collapsible-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur dolores eius, voluptatibus odio aliquam magnam quia rem sunt quollitia, fugit sit.</div>
+      </li>
+      <li class="collapsible-item">
+        <div class="collapsible-header"><i class="material-icons">person</i>Person 3</div>
+        <div class="collapsible-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur dolores eius, voluptatibus odio aliquam magnam quia rem sunt quollitia, fugit sit.</div>
+      </li>
+      <li class="collapsible-item">
+        <div class="collapsible-header"><i class="material-icons">person</i>Person 4</div>
+        <div class="collapsible-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur dolores eius, voluptatibus odio aliquam magnam quia rem sunt quollitia, fugit sit.</div>
+      </li>
+      <li class="collapsible-item">
+        <div class="collapsible-header"><i class="material-icons">person</i>Person 5</div>
+        <div class="collapsible-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur dolores eius, voluptatibus odio aliquam magnam quia rem sunt quollitia, fugit sit.</div>
+      </li>
+      <li class="collapsible-item">
+        <div class="collapsible-header"><i class="material-icons">person</i>Person 6</div>
+        <div class="collapsible-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur dolores eius, voluptatibus odio aliquam magnam quia rem sunt quollitia, fugit sit.</div>
+      </li>
+    </ul>
+
+  </main>
+
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, {
+        accordion: false
+      });
+    });
+  </script>
+</body>
+</html>

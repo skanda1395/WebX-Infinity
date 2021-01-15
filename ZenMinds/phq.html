@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <style>
+      .mt {
+        margin: 35px 0;
+      }
+      .sub-heading {
+        color: #96000e;
+      }
+      #details_btns {
+        display: flex;
+        justify-content: center;
+      }
+      #details_btns input {
+        margin-right: 10px;
+      }
+    </style>
+    <body>
+      
+      <main class="container section">
+        <div class="row">
+          <h4 class="center-align teal-text lighten-1"><i class="material-icons">question_answer</i> Your Personal Health Questionnaire</h4>
+          <!-- Basic Questions -->  
+          <form action="#" class="col s12 l6 offset-l3">
+            <h5 class="sub-heading">Personal Information</h5>
+            <!-- Name -->
+            <div id="name" class="row">
+              <div class="col s12 l6">
+                <!-- First Name -->
+                <div class="input-field">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input type="text" id="first_name" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <!-- Surname -->
+                <div class="input-field">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input type="text" id="surname" class="validate">
+                  <label for="surname">Surname</label>
+                </div>
+              </div>
+              <div class="col s12">
+                <!-- Given Name -->
+                <div class="input-field">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input type="text" id="name" class="validate">
+                  <label for="name">Given Name</label>
+                </div>
+              </div>
+            </div>
+            <!-- DOB -->
+            <div class="input-field">
+              <i class="material-icons prefix">date_range</i>
+              <input type="text" id="dob" class="datepicker validate">
+              <label for="dob">DOB</label>
+            </div>
+            <!-- Gender -->
+            <div class="input-field">
+              <div class="row">
+                <div class="col">
+                  <i class="material-icons">wc</i>
+                </div>
+                <div class="col">
+                  <label for="male">
+                    <input type="radio" name="gender" id="male">
+                    <span>Male</span>
+                  </label>
+                </div>
+                <div class="col">
+                  <label for="female">
+                    <input type="radio" name="gender" id="female">
+                    <span>Female</span>
+                  </label>
+                </div>
+                <div class="col">
+                  <label for="non-binary">
+                    <input type="radio" name="gender" id="non-binary">
+                    <span>Non-binary</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Academic Qualification -->
+            <div class="input-field">
+              <select name="qualification" id="qualification">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="higher-secondary">Higher Secondary</option>
+                <option value="diploma">Diploma</option>
+                <option value="graduate">Graduate</option>
+                <option value="post-graduate">Post-Graduate</option>
+                <label for="basic">Basic Schooling</label>
+              </select>
+              <label for="qualification">
+                Academic Qualification</label>
+            </div>
+            <!-- Relationship Status -->
+            <div class="input-field">
+              <select name="relationship_status" id="relationship_status">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+              </select>
+              <label for="relationship_status">
+                Relationship Status</label>
+              </div>
+            <!-- Nationality -->
+            <div class="input-field">
+              <select name="nationality" id="nationality">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="india">India</option>
+                <option value="uk">UK</option>
+                <option value="usa">USA</option>
+                <option value="japan">Japan</option>
+              </select>
+              <label for="nationality">Nationality</label>
+            </div>
+            <!-- Employment Status -->
+            <div class="input-field mt">
+              <select name="employment_status" id="employment_status">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="employed">Employed</option>
+                <option value="contractor">Contractor</option>
+                <option value="self-employed">Self-Employed</option>
+                <option value="unemployed">Unemployed</option>
+              </select>
+              <label for="employment_status">Employment Status</label>
+            </div>
+            <!-- Employment Details -->
+            <div class="emp_details_sec">
+              <h6>Please list past employment and any upcoming opportunities</h6>
+              <div id="jobs-container"></div>
+              <!-- Modal Trigger -->
+              <button data-target="modal1" class="btn modal-trigger">Add Job</button>
+              <!--Modal Structure -->
+              <div id="modal1" class="modal">
+                <div class="modal-content container">
+                  <h5 class="center-align sub-heading">Job Details</h5>
+                  <form id="job-details">
+                    <div class="input-field">
+                      <input type="text" class="validate input" id="job_title">
+                      <label for="job_title">Job Title</label>
+                      <span class="helper-text" data-error="This field is required" data-success="">Your Offical Job Title</span>
+                    </div>
+                    <div class="input-field">
+                      <input type="text" class="validate input" id="organization" >
+                      <label for="organization">Organization</label>
+                      <span class="helper-text" data-error="This field is required" data-success="">Your Company Name</span>
+                    </div>
+                    <div class="input-field">
+                      <input type="text" class="autocomplete input" id="autocomplete-location" >
+                      <label for="autocomplete-location">Location</label>
+                      <span class="helper-text" data-error="This field is required" data-success="">Your Company Location (City)</span>
+                    </div>
+                    <!-- start & end date container -->
+                    <div class="row">
+                      <div class="col s12 l6">
+                        <div class="input-field">
+                          <input type="text" class="datepicker input" id="start-date" >
+                          <label for="start-date">Start Date</label>
+                          <span class="helper-text" data-error="This field is required" data-success="">When did you start working here?</span>
+                        </div>
+                      </div>
+                      <div class="col s12 l6">
+                        <div class="input-field">
+                          <input type="text" class="datepicker input" id="end-date" >
+                          <label for="end-date">End Date</label>
+                          <span class="helper-text" data-error="This field is required" data-success="">When did you leave this company?</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Job Description -->
+                    <div class="input-field">
+                      <textarea name="job_descriptipn" id="job-description" class="materialize-textarea input" ></textarea>
+                      <label for="job-description">Job Description</label>
+                      <span class="helper-text" data-error="This field is required" data-success="">Briefly describe what you do/did here</span>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="col s12 l6 offset-l3" id="details_btns">
+                      <input type="submit" class="btn" value="Add" id="add_job">
+                      <button class="modal-close btn red">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </main>
+
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script>
+        // select boxes init
+        let elems = document.querySelectorAll('select');
+        let instances = M.FormSelect.init(elems, {});
+        
+        // Datepicker init
+        let ele = document.querySelectorAll('.datepicker');
+        let instances_1 = M.Datepicker.init(ele, {});
+        
+        // DOB init
+        let modal_ele = document.querySelector('#modal1');
+        let modal_instance = M.Modal.init(modal_ele, {
+          onCloseEnd: clearInputFields
+        });
+
+        // Autocomplete location init
+        let location_ele = document.querySelector(".autocomplete");
+        let auto_location_instance = M.Autocomplete.init(location_ele, {
+          data: {
+            "Bangalore": null,
+            "Chennai": null,
+            "Delhi": null,
+            "Hyderabad": null,
+            "Kolkatta": null,
+            "Mumbai": null,
+          }
+        });
+
+        let job_count = 0;
+        const details_fields = document.querySelectorAll(".modal-content .input");
+        const jobs_container = document.querySelector("#jobs-container");
+        let add_btn = document.querySelector("#add_job");
+        add_btn.addEventListener("click", validate_Add);
+        
+        function validateForm() {
+          // Go through every field and make sure it's not empty
+          let isValid = true;
+          for(let i = 0; i < details_fields.length; i++) {
+            if(!details_fields[i].value.trim()) {
+              details_fields[i].classList.add("invalid");
+              isValid = false;
+            }
+          }
+          console.log(isValid);
+          return isValid;
+        }
+
+        function validate_Add(event) {
+          event.preventDefault();
+          // If the form is not valid, do nothing
+          if(!validateForm()) return;
+
+          // Else add the fields entered
+          console.log("Form is valid. Can add the job detail now");
+
+          let job = document.createElement("div");
+          job.setAttribute("id", `job-${job_count}`);
+          job.classList.add("card");
+          job.innerHTML = 
+                `<div class="card-content">
+                    <span class="card-title">${details_fields[0].value}</span>
+                    <p>${details_fields[1].value}</p>
+                    <p>${details_fields[2].value}</p>
+                    <p>${details_fields[3].value} - ${details_fields[4].value}</p>
+                    <p>${details_fields[5].value}</p>
+                  </div>
+                  <div class="card-action">
+                    <button class="btn waves-effect waves-light teal"><i class="material-icons">edit</i></button>
+                    <button class="btn halfway-fab waves-effect waves-light red" onclick="delete_job('job-${job_count}')"><i class="material-icons">delete</i></button>
+                  </div>`;
+          jobs_container.appendChild(job);
+          modal_instance.close();
+          job_count++;
+        }
+
+        function delete_job(id) {
+          document.getElementById(id).remove();
+        }
+
+        function clearInputFields() {
+          details_fields.forEach((field) => {
+            field.value = "";
+            field.classList.remove("valid", "invalid");
+            document.querySelectorAll(".modal-content label").forEach((val) => val.classList.remove("active"));
+          });
+        }
+      </script>
+    </body>
+  </html>

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: darkblue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: white;
+}
+
+.navigation {
+  position: fixed;
+  width: 60px;
+  height: 100%;
+  background: var(--primary-color);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation:hover, .navigation.active {
+  width: 250px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation ul li:hover {
+  background: #ea1d63;
+}
+
+.navigation ul li a {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  text-align: center;
+}
+
+.navigation ul li a .icon .fa {
+  font-size: 17px;
+}
+
+.navigation ul li a .title  {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.toggle {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.toggle.active {
+  background: #ea1d63;
+}
+
+.toggle:before {
+  content: "\f0c9";
+  font-family: fontAwesome;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.toggle.active:before {
+  content: "\f00d";
+}
+
+.mainNav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: var(--primary-color);
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+}
+
+.mainNav a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+}
+
+@media (max-width: 767px) {
+  .navigation {
+    left: -60px;
+  }
+  .navigation.active {
+    left: 0;
+    width: 100%;
+  }
+  .mainNav {
+    margin-left: 0;
+  }
+}
