@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css" />
+    <title>ZenMinds | Homepage</title>
+    <style>
+      h2 {
+        text-decoration: underline dotted var(--primary-color);
+      }
+      #eligibility h4 {
+        text-decoration: underline var(--primary-color);
+      }
+      #eligibility li {
+        margin: 10px;
+      }
+      #welcome {
+        color: var(--primary-color);
+        font-size: 2em;
+        line-height: 1.5;
+      }
+      footer {
+        margin-top: 75px;
+      }
+      #criterion {
+        margin-top: 35px;
+      }
+      #criterion a {
+        background: var(--primary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav>
+        <div class="nav-wrapper white">
+          <a href="#!" class="brand-logo black-text" style="margin-left: 25px">
+            <i class="material-icons hide-on-small-only">healing</i>
+            ZenMinds</a
+          >
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger black-text"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a class="black-text" href="phq.html">PHQ</a></li>
+            <li>
+              <a
+                class="black-text"
+                href="http://thezenminds.webxinfinity.uk/blogs/"
+                >All Blogs</a
+              >
+            </li>
+            <li><a class="black-text" href="#">Videos</a></li>
+            <li><a class="black-text" href="#">Testimonials</a></li>
+            <li><a class="black-text" href="#intro">About Me</a></li>
+            <!-- Dropdown Trigger -->
+            <li>
+              <a
+                class="dropdown-trigger black-text"
+                href="#!"
+                data-target="dropdown1"
+                >Dropdown<i class="material-icons right">arrow_drop_down</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sidenav -->
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="phq.html">PHQ</a></li>
+        <li>
+          <a href="http://thezenminds.webxinfinity.uk/blogs/">All Blogs</a>
+        </li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li class="divider"></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">Eligibility</a></li>
+      </ul>
+
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">How it works</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Eligibility</a></li>
+      </ul>
+    </header>
+
+    <!-- How it works  -->
+    <div class="container" id="how-it-works">
+      <h2 class="center-align">How It Works</h2>
+      <div>
+        <h6>
+          <span id="welcome">Welcome!</span> Please go through the following
+          requirements to better understand how I am able to help you lead
+          better lives. As much as I would like to reach out to each and every
+          one of you, it is not feasible. Hence, the criterion.
+        </h6>
+      </div>
+    </div>
+
+    <!-- Eligibility -->
+    <section id="eligibility" class="container">
+      <h4>Eligibility</h4>
+      <ol>
+        <li>English language Fluency</li>
+        <li>Must be in age group of 25-60 years</li>
+        <li>
+          PHQ (Personal Health Questionnaire) has to be filled out with accuracy
+          and to the best of your knowledge
+        </li>
+        <li>
+          PHQ will thereafter be assessed and once I ascertain that I am the
+          right person to help you (at my sole discretion), I will approve it
+          and you will then be guided further through the process.
+        </li>
+        <li>
+          Once approved, an email notification will be sent with a unique
+          username and password
+        </li>
+        <li>
+          Password can be changed, as per your convenience at a later point of
+          time
+        </li>
+        <li>
+          Once you login with your unique username and password, you will be
+          guided to a drop-down menu of consent, payment portal and thereafter
+          booking of sessions
+        </li>
+        <li>
+          Your ten (10) sessions will consist of half an hour video calls with
+          me
+        </li>
+      </ol>
+    </section>
+
+    <!-- Fit the criterion -->
+    <section id="criterion" class="container center-align">
+      <h5>Do you think you fit the criterion listed above?</h5>
+      <a href="phq.html" class="btn">Fill Out PHQ here!</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">About</h5>
+            <p class="grey-text text-lighten-4">
+              About Lorem Ipsum is simply text of the Lorem Ipsum is simply
+              dummy text of the printing and typesetting industry simply dummy
+              text of the printing and typesetting industry. Lorem Ipsum is
+              simply text of the Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry simply dummy text of the
+              printing and typesetting industry.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Navigation</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="#">Support Forum</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="t&c.html"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="privacy-policy.html"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#"
+                  >Help and Support</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2021 ZenMinds Pvt. Ltd.
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //   Sidenav init
+        var elems_2 = document.querySelectorAll(".sidenav");
+        var instances_2 = M.Sidenav.init(elems_2);
+
+        //   Dropdown init
+        var elems_1 = document.querySelectorAll(".dropdown-trigger");
+        var instances_1 = M.Dropdown.init(elems_1);
+      });
+    </script>
+  </body>
+</html>

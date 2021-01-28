@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>ZenMinds | Add Testimonial</title>
+  </head>
+  <style>
+    :root {
+      --primary-color: #b89b90;
+    }
+    .mt {
+      margin-top: 10px;
+    }
+    .submit {
+      display: flex;
+      justify-content: center;
+    }
+    .sub-heading {
+      color: var(--primary-color);
+    }
+    @media screen and (max-width: 992px) {
+      .card-content {
+        padding: 24px 0 !important;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper white">
+          <a href="#!" class="brand-logo black-text" style="margin-left: 25px">
+            <i class="material-icons hide-on-small-only">healing</i>
+            ZenMinds</a
+          >
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger black-text"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a class="black-text" href="phq.html">PHQ</a></li>
+            <li>
+              <a
+                class="black-text"
+                href="http://thezenminds.webxinfinity.uk/blogs/"
+                >All Blogs</a
+              >
+            </li>
+            <li><a class="black-text" href="#">Videos</a></li>
+            <li><a class="black-text" href="#">Testimonials</a></li>
+            <li><a class="black-text" href="#intro">About Me</a></li>
+            <!-- Dropdown Trigger -->
+            <li>
+              <a
+                class="dropdown-trigger black-text"
+                href="#!"
+                data-target="dropdown1"
+                >Dropdown<i class="material-icons right">arrow_drop_down</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sidenav -->
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="phq.html">PHQ</a></li>
+        <li>
+          <a href="http://thezenminds.webxinfinity.uk/blogs/">All Blogs</a>
+        </li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li class="divider"></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">Eligibility</a></li>
+      </ul>
+
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">How it works</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Eligibility</a></li>
+      </ul>
+    </header>
+
+    <!-- Add Testimonial Form- -->
+    <main class="container">
+      <div class="row mt">
+        <h4 class="center-align sub-heading">Add Your Testimonial</h4>
+        <div class="col s12 m6 offset-m3 card">
+          <form class="card-content" action="#" method="POST">
+            <!-- Name -->
+            <div class="input-field">
+              <i class="material-icons prefix">person</i>
+              <input id="name" type="text" class="validate" required />
+              <label for="name">Name</label>
+              <span class="helper-text" data-error="Your name is required"
+                >Your full name</span
+              >
+            </div>
+            <!-- Email -->
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" class="validate" required />
+              <label for="email">Email</label>
+              <span class="helper-text" data-error="Proper email is required"
+                >Your email address</span
+              >
+            </div>
+            <!-- Testimonial -->
+            <div class="input-field">
+              <i class="material-icons prefix">rate_review</i>
+              <textarea
+                name="testimonial"
+                id="testimonial"
+                class="materialize-textarea validate"
+                required
+              ></textarea>
+              <label for="testimonial">How was it working with us?</label>
+            </div>
+            <!-- Photo -->
+            <div class="input-field file-field">
+              <div class="btn">
+                <span>File</span>
+                <input type="file" accept="image/*" name="photo" id="photo" />
+              </div>
+              <div class="file-path-wrapper">
+                <input type="text" class="file-path validate" required />
+                <span
+                  class="helper-text"
+                  data-error="Only images are accepted."
+                  data-success=""
+                  >Please upload your profile picture.</span
+                >
+              </div>
+            </div>
+            <!-- Submit -->
+            <div class="submit">
+              <button
+                class="btn waves-effect waves-light"
+                type="submit"
+                name="action"
+              >
+                Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Sidenav init
+        let nav_el = document.querySelector(".sidenav");
+        let nav_instances = M.Sidenav.init(nav_el, {});
+      });
+    </script>
+  </body>
+</html>

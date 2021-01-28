@@ -1,107 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <title>ZenMinds | T&C</title>
     <style>
-        #terms ul.nested li {
-            list-style-type: circle;
-        }
-        #terms ul li h5 {
-            text-decoration: underline var(--primary-color);
-        }
+      #terms ul.nested li {
+        list-style-type: circle;
+      }
+      #terms ul li h5 {
+        text-decoration: underline var(--primary-color);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav>
+        <div class="nav-wrapper white">
+          <a href="#!" class="brand-logo black-text" style="margin-left: 25px">
+            <i class="material-icons hide-on-small-only">healing</i>
+            ZenMinds</a
+          >
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger black-text"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a class="black-text" href="phq.html">PHQ</a></li>
+            <li>
+              <a
+                class="black-text"
+                href="http://thezenminds.webxinfinity.uk/blogs/"
+                >All Blogs</a
+              >
+            </li>
+            <li><a class="black-text" href="#">Videos</a></li>
+            <li><a class="black-text" href="#">Testimonials</a></li>
+            <li><a class="black-text" href="#intro">About Me</a></li>
+            <!-- Dropdown Trigger -->
+            <li>
+              <a
+                class="dropdown-trigger black-text"
+                href="#!"
+                data-target="dropdown1"
+                >Dropdown<i class="material-icons right">arrow_drop_down</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-    <header class="">
-        <nav class="nav-extended transparent">
-            <div class="nav-wrapper container">
-                <a href="#" class="brand-logo black-text"><i class="material-icons">healing</i><h5>ZenMinds</h5></a>
-                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="black-text nav-cta">Call now: +1 093 31 32 321</li>
-                    <li><a  href="phq.html" id="appointment" class="black-text waves-effect-light btn-flat btn">Make an appointment</a></li>
-                </ul>
-            </div>
-            <div class="tabs-container">
-                <div class="nav-content container">
-                    <div class="tabs">
-                        <li class="tab tab-hover"><a href="#">Home</a></li>
-                        <li class="tab tab-hover"><a href="#">Services</a></li>
-                        <li class="tab tab-hover"><a href="http://thezenminds.webxinfinity.uk/blogs/">All Blogs</a></li>
-                        <li class="tab tab-hover"><a href="#intro">About Me</a></li>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <ul class="sidenav" id="mobile-nav">
-            <li class="black-text nav-cta">Call now: +1 093 31 32 321</li>
-            <li><a  href="#" id="appointment" class="black-text waves-effect-light btn-flat btn">Make an appointment</a></li>
-        </ul>
+      <!-- Sidenav -->
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="phq.html">PHQ</a></li>
+        <li>
+          <a href="http://thezenminds.webxinfinity.uk/blogs/">All Blogs</a>
+        </li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li class="divider"></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">Eligibility</a></li>
+      </ul>
+
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Eligibility</a></li>
+      </ul>
     </header>
-
 
     <!-- T&C -->
     <section id="terms" class="container">
-        <h2 class="tc-title center-align text-var(--primary-color)">Terms & Conditions</h2>
-        <div class="content">
-            <ul>
-                <li>
-                    <h5>Terms</h5>
-                    <p>By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trademark law.</p>
-                </li>
-                <li>
-                    <h5>Use License</h5>
-                    <p>Permission is granted to temporarily download one copy of the materials (information or software) on [insert company legal entity name] web site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
-                    <ul class="nested">
-                        <li>modify or copy the materials;</li>
-                        <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-                        <li>attempt to decompile or reverse engineer any software contained on [insert company legal entity name]’s web site;</li>
-                        <li>remove any copyright or other proprietary notations from the materials; or</li>
-                        <li>transfer the materials to another person or “mirror” the materials on any other server.</li>
-                    </ul>
-                    <p>This license shall automatically terminate if you violate any of these restrictions and may be terminated by [insert company legal entity name] at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.</p>
-                </li>
-                <li>
-                    <h5>Disclaimer</h5>
-                    <p>The materials on [insert company legal entity name]’s web site are provided “as is”. [insert company legal entity name] makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, [insert company legal entity name] does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.</p>
-                </li>
-                <li>
-                    <h5>Limitations</h5>
-                    <p>In no event shall [insert company legal entity name] or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on [insert company legal entity name]’s Internet site, even if [insert company legal entity name] or a [insert company legal entity name] authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
-                </li>
-                <li>
-                    <h5>Revisions and Errata</h5>
-                    <p>The materials appearing on [insert company legal entity name]’s web site mayinclude technical, typographical, or photographic errors. [insert company legal entity name]  does not warrant that any of the materials on its web site are accurate, complete, or current. [insert company legal entity name]  may make changes to the materials contained on its web site at any time without notice. [insert company legal entity name] does not, however, make any commitment to update the materials.</p>
-                </li>
-                <li>
-                    <h5>Links</h5>
-                    <p>[insert company legal entity name]. has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by [insert company legal entity name] of the site. Use of any such linked web site is at the user’s own risk.</p>
-                </li>
-                <li>
-                    <h5>Site Terms of Use Modifications</h5>
-                    <p>[insert company legal entity name] may revise these terms of use for its web site at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms and Conditions of Use.</p>
-                </li>
-                <li>
-                    <h5>Governing Law</h5>
-                    <p>Any claim relating to [insert company legal entity name]’s web site shall be governed by the laws of Singapore without regard to its conflict of law provisions.</p>
-                </li>
-                <li>
-                    <p>Effective date : [●] Last updated : [●]</p>
-                </li>
+      <h2 class="tc-title center-align text-var(--primary-color)">
+        Terms & Conditions
+      </h2>
+      <div class="content">
+        <ul>
+          <li>
+            <h5>Terms</h5>
+            <p>
+              By accessing this web site, you are agreeing to be bound by these
+              web site Terms and Conditions of Use, all applicable laws and
+              regulations, and agree that you are responsible for compliance
+              with any applicable local laws. If you do not agree with any of
+              these terms, you are prohibited from using or accessing this site.
+              The materials contained in this web site are protected by
+              applicable copyright and trademark law.
+            </p>
+          </li>
+          <li>
+            <h5>Use License</h5>
+            <p>
+              Permission is granted to temporarily download one copy of the
+              materials (information or software) on The ZenMinds web site for
+              personal, non-commercial transitory viewing only. This is the
+              grant of a license, not a transfer of title, and under this
+              license you may not:
+            </p>
+            <ul class="nested">
+              <li>modify or copy the materials;</li>
+              <li>
+                use the materials for any commercial purpose, or for any public
+                display (commercial or non-commercial);
+              </li>
+              <li>
+                attempt to decompile or reverse engineer any software contained
+                on The ZenMinds’s web site;
+              </li>
+              <li>
+                remove any copyright or other proprietary notations from the
+                materials; or
+              </li>
+              <li>
+                transfer the materials to another person or “mirror” the
+                materials on any other server.
+              </li>
             </ul>
-        </div>
+            <p>
+              This license shall automatically terminate if you violate any of
+              these restrictions and may be terminated by The ZenMinds at any
+              time. Upon terminating your viewing of these materials or upon the
+              termination of this license, you must destroy any downloaded
+              materials in your possession whether in electronic or printed
+              format.
+            </p>
+          </li>
+          <li>
+            <h5>Disclaimer</h5>
+            <p>
+              The materials on The ZenMinds’s web site are provided “as is”. The
+              ZenMinds makes no warranties, expressed or implied, and hereby
+              disclaims and negates all other warranties, including without
+              limitation, implied warranties or conditions of merchantability,
+              fitness for a particular purpose, or non-infringement of
+              intellectual property or other violation of rights. Further, The
+              ZenMinds does not warrant or make any representations concerning
+              the accuracy, likely results, or reliability of the use of the
+              materials on its Internet web site or otherwise relating to such
+              materials or on any sites linked to this site.
+            </p>
+          </li>
+          <li>
+            <h5>Limitations</h5>
+            <p>
+              In no event shall The ZenMinds or its suppliers be liable for any
+              damages (including, without limitation, damages for loss of data
+              or profit, or due to business interruption,) arising out of the
+              use or inability to use the materials on The ZenMinds’s Internet
+              site, even if The ZenMinds or a The ZenMinds authorized
+              representative has been notified orally or in writing of the
+              possibility of such damage. Because some jurisdictions do not
+              allow limitations on implied warranties, or limitations of
+              liability for consequential or incidental damages, these
+              limitations may not apply to you.
+            </p>
+          </li>
+          <li>
+            <h5>Revisions and Errata</h5>
+            <p>
+              The materials appearing on The ZenMinds’s web site mayinclude
+              technical, typographical, or photographic errors. The ZenMinds
+              does not warrant that any of the materials on its web site are
+              accurate, complete, or current. The ZenMinds may make changes to
+              the materials contained on its web site at any time without
+              notice. The ZenMinds does not, however, make any commitment to
+              update the materials.
+            </p>
+          </li>
+          <li>
+            <h5>Links</h5>
+            <p>
+              The ZenMinds. has not reviewed all of the sites linked to its
+              Internet web site and is not responsible for the contents of any
+              such linked site. The inclusion of any link does not imply
+              endorsement by The ZenMinds of the site. Use of any such linked
+              web site is at the user’s own risk.
+            </p>
+          </li>
+          <li>
+            <h5>Site Terms of Use Modifications</h5>
+            <p>
+              The ZenMinds may revise these terms of use for its web site at any
+              time without notice. By using this website you are agreeing to be
+              bound by the then current version of these Terms and Conditions of
+              Use.
+            </p>
+          </li>
+          <li>
+            <h5>Governing Law</h5>
+            <p>
+              Any claim relating to The ZenMinds’s web site shall be governed by
+              the laws of Singapore without regard to its conflict of law
+              provisions.
+            </p>
+          </li>
+          <li>
+            <p>Effective date : [●] Last updated : [●]</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
-</body>
+    <!-- Footer Section -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">About</h5>
+            <p class="grey-text text-lighten-4">
+              About Lorem Ipsum is simply text of the Lorem Ipsum is simply
+              dummy text of the printing and typesetting industry simply dummy
+              text of the printing and typesetting industry. Lorem Ipsum is
+              simply text of the Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry simply dummy text of the
+              printing and typesetting industry.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Navigation</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="#">Support Forum</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="t&c.html"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="privacy-policy.html"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#"
+                  >Help and Support</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2021 ZenMinds Pvt. Ltd.
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //   Sidenav init
+        var elems_2 = document.querySelectorAll(".sidenav");
+        var instances_2 = M.Sidenav.init(elems_2);
+
+        //   Dropdown init
+        var elems_1 = document.querySelectorAll(".dropdown-trigger");
+        var instances_1 = M.Dropdown.init(elems_1);
+      });
+    </script>
+  </body>
 </html>

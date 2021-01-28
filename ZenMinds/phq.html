@@ -5,13 +5,12 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <style>
-      .mt {
-        margin: 35px 0;
+      body {
+        scroll-behavior: smooth !important;
       }
       .sub-heading {
         color: #96000e;
@@ -23,89 +22,141 @@
       #details_btns input {
         margin-right: 10px;
       }
+      .range-field label {
+        font-size: 1rem;
+      }
+      ol {
+        padding-left: 25px;
+      }
+      .submit {
+        display: flex;
+        justify-content: center;
+      }
+      .ip_margin {
+        margin: 25px 0;
+      }
+      footer {
+        background: #2d2d2d !important;
+      }
+      .input-field .height {
+        height: 4rem !important;
+      }
     </style>
     <body>
+
+    <header>
+      <!-- Navbar -->
+      <nav>
+        <div class="nav-wrapper white">
+          <a href="#!" class="brand-logo black-text" style="margin-left: 25px">
+            <i class="material-icons hide-on-small-only">healing</i>
+            ZenMinds</a
+          >
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger black-text"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a class="black-text" style="color: #b89b90 !important;" href="phq.html">PHQ</a></li>
+            <li>
+              <a
+                class="black-text"
+                href="http://thezenminds.webxinfinity.uk/blogs/"
+                >All Blogs</a
+              >
+            </li>
+            <li><a class="black-text" href="#">Videos</a></li>
+            <li><a class="black-text" href="#">Testimonials</a></li>
+            <li><a class="black-text" href="#intro">About Me</a></li>
+            <!-- Dropdown Trigger -->
+            <li>
+              <a
+                class="dropdown-trigger black-text"
+                href="#!"
+                data-target="dropdown1"
+                >Dropdown<i class="material-icons right">arrow_drop_down</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sidenav -->
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="phq.html">PHQ</a></li>
+        <li>
+          <a href="http://thezenminds.webxinfinity.uk/blogs/">All Blogs</a>
+        </li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li class="divider"></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">Eligibility</a></li>
+      </ul>
+
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Eligibility</a></li>
+      </ul>
+    </header>
       
-      <main class="container section">
-        <div class="row">
-          <h4 class="center-align teal-text lighten-1"><i class="material-icons">question_answer</i> Your Personal Health Questionnaire</h4>
-          <!-- Basic Questions -->  
-          <form action="#" class="col s12 l6 offset-l3">
+    <!-- PHQ Form -->
+    <main class="container section">
+      <div class="row">
+        <h4 class="center-align teal-text lighten-1"><i class="material-icons">question_answer</i> Your Personal Health Questionnaire</h4>
+        <h6 class="center-align">Please make sure you've read the <a href="how-it-works.html">eligibility criterion</a> before filling this form.</h6>
+        <!-- Basic Questions -->  
+        <form action="thank_you.php" method="POST" id="outer-form" class="col s12 l6 offset-l3">
+          <!-- Section I -->
+          <div id="section_1">
             <h5 class="sub-heading">Personal Information</h5>
             <!-- Name -->
-            <div id="name" class="row">
+            <div id="name" class="row ip_margin">
               <div class="col s12 l6">
                 <!-- First Name -->
                 <div class="input-field">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input type="text" id="first_name" class="validate">
+                  <input type="text" name="first_name" id="first_name" class="validate">
                   <label for="first_name">First Name</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <!-- Surname -->
                 <div class="input-field">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input type="text" id="surname" class="validate">
+                  <input type="text" name="surname" id="surname" class="validate">
                   <label for="surname">Surname</label>
                 </div>
               </div>
               <div class="col s12">
                 <!-- Given Name -->
                 <div class="input-field">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input type="text" id="name" class="validate">
+                  <input type="text" name="given_name" id="name" class="validate">
                   <label for="name">Given Name</label>
                 </div>
               </div>
             </div>
             <!-- DOB -->
-            <div class="input-field">
-              <i class="material-icons prefix">date_range</i>
-              <input type="text" id="dob" class="datepicker validate">
+            <div class="input-field ip_margin">
+              <input type="date" name="dob" class="validate" id="dob">
               <label for="dob">DOB</label>
+              <span class="helper-text">Should be of the format: dd-mm-yyyy</span>
             </div>
             <!-- Gender -->
-            <div class="input-field">
-              <div class="row">
-                <div class="col">
-                  <i class="material-icons">wc</i>
-                </div>
-                <div class="col">
-                  <label for="male">
-                    <input type="radio" name="gender" id="male">
-                    <span>Male</span>
-                  </label>
-                </div>
-                <div class="col">
-                  <label for="female">
-                    <input type="radio" name="gender" id="female">
-                    <span>Female</span>
-                  </label>
-                </div>
-                <div class="col">
-                  <label for="non-binary">
-                    <input type="radio" name="gender" id="non-binary">
-                    <span>Non-binary</span>
-                  </label>
-                </div>
-              </div>
+            <div class="input-field ip_margin">
+              <input type="text" name="gender" class="validate" id="gender">
+              <label for="gender">Gender</label>
             </div>
             <!-- Academic Qualification -->
-            <div class="input-field">
-              <select name="qualification" id="qualification">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="higher-secondary">Higher Secondary</option>
-                <option value="diploma">Diploma</option>
-                <option value="graduate">Graduate</option>
-                <option value="post-graduate">Post-Graduate</option>
-                <label for="basic">Basic Schooling</label>
-              </select>
-              <label for="qualification">
-                Academic Qualification</label>
+            <div class="input-field ip_margin">
+              <label for="auto-qual">Academic Qualification</label>
+              <input type="text" name="qualification" class="autocomplete validate" id="auto-qual">
             </div>
             <!-- Relationship Status -->
-            <div class="input-field">
+            <div class="input-field ip_margin">
               <select name="relationship_status" id="relationship_status">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="single">Single</option>
@@ -115,182 +166,534 @@
               </select>
               <label for="relationship_status">
                 Relationship Status</label>
-              </div>
+            </div>
             <!-- Nationality -->
-            <div class="input-field">
-              <select name="nationality" id="nationality">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="india">India</option>
-                <option value="uk">UK</option>
-                <option value="usa">USA</option>
-                <option value="japan">Japan</option>
-              </select>
-              <label for="nationality">Nationality</label>
+            <div class="input-field ip_margin">
+              <label for="auto-national">Nationality</label>
+              <input type="text" class="autocomplete validate auto-country" name="nationality" id="auto-national">
             </div>
             <!-- Employment Status -->
-            <div class="input-field mt">
-              <select name="employment_status" id="employment_status">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="employed">Employed</option>
-                <option value="contractor">Contractor</option>
-                <option value="self-employed">Self-Employed</option>
-                <option value="unemployed">Unemployed</option>
-              </select>
-              <label for="employment_status">Employment Status</label>
-            </div>
-            <!-- Employment Details -->
-            <div class="emp_details_sec">
-              <h6>Please list past employment and any upcoming opportunities</h6>
-              <div id="jobs-container"></div>
-              <!-- Modal Trigger -->
-              <button data-target="modal1" class="btn modal-trigger">Add Job</button>
-              <!--Modal Structure -->
-              <div id="modal1" class="modal">
-                <div class="modal-content container">
-                  <h5 class="center-align sub-heading">Job Details</h5>
-                  <form id="job-details">
-                    <div class="input-field">
-                      <input type="text" class="validate input" id="job_title">
-                      <label for="job_title">Job Title</label>
-                      <span class="helper-text" data-error="This field is required" data-success="">Your Offical Job Title</span>
-                    </div>
-                    <div class="input-field">
-                      <input type="text" class="validate input" id="organization" >
-                      <label for="organization">Organization</label>
-                      <span class="helper-text" data-error="This field is required" data-success="">Your Company Name</span>
-                    </div>
-                    <div class="input-field">
-                      <input type="text" class="autocomplete input" id="autocomplete-location" >
-                      <label for="autocomplete-location">Location</label>
-                      <span class="helper-text" data-error="This field is required" data-success="">Your Company Location (City)</span>
-                    </div>
-                    <!-- start & end date container -->
-                    <div class="row">
-                      <div class="col s12 l6">
-                        <div class="input-field">
-                          <input type="text" class="datepicker input" id="start-date" >
-                          <label for="start-date">Start Date</label>
-                          <span class="helper-text" data-error="This field is required" data-success="">When did you start working here?</span>
-                        </div>
-                      </div>
-                      <div class="col s12 l6">
-                        <div class="input-field">
-                          <input type="text" class="datepicker input" id="end-date" >
-                          <label for="end-date">End Date</label>
-                          <span class="helper-text" data-error="This field is required" data-success="">When did you leave this company?</span>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Job Description -->
-                    <div class="input-field">
-                      <textarea name="job_descriptipn" id="job-description" class="materialize-textarea input" ></textarea>
-                      <label for="job-description">Job Description</label>
-                      <span class="helper-text" data-error="This field is required" data-success="">Briefly describe what you do/did here</span>
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="col s12 l6 offset-l3" id="details_btns">
-                      <input type="submit" class="btn" value="Add" id="add_job">
-                      <button class="modal-close btn red">Cancel</button>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer"></div>
+            <div class="input-field ip_margin">
+              <p>Employment Status</p>
+              <div>
+                <p>
+                  <label>
+                    <input type="radio" name="emp_status" value="Employed">
+                    <span>Employed</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="radio" name="emp_status" value="Unemployed">
+                    <span>Unemployed</span>
+                  </label>
+                </p>
               </div>
             </div>
-          </form>
-        </div>
+            <!-- Employment Details -->
+            <div class="input-field emp_details_sec ip_margin">
+              <textarea name="jobs" id="job_details" name="jobs" class="materialize-textarea height"></textarea>
+              <label for="job_details" name="jobs">Please list past employment and any upcoming opportunities</label>
+            </div>
+            <!-- Country of Residence -->
+            <div class="input-field ip_margin">
+              <input type="text" name="country_of_residence" class="autocomplete validate auto-country" id="country">
+              <label for="country">Country of residence</label>
+            </div>
+            <!-- State -->
+            <div class="input-field ip_margin">
+              <input type="text" name="state" class="autocomplete auto-state" id="state">
+              <label for="state">State</label>
+            </div>
+            <!-- City -->
+            <div class="input-field ip_margin">
+              <input type="text" name="city" class="autocomplete auto-city" id="city">
+              <label for="city">City</label>
+            </div>
+            <!-- Email Address -->
+            <div class="input-field ip_margin">
+              <input type="text" name="email" class="validate" id="email">
+              <label for="email">Email</label>
+            </div>
+            <!-- Mobile Number -->
+            <div class="input-field ip_margin">
+              <input type="text" name="mobile_number" class="validate" id="mobile_number">
+              <label for="mobile_number">Mobile Number</label>
+            </div>
+            <!-- Point of Contact -->
+            <div id="point_of_cnt ip_margin">
+              <h6>Point of contact in case of emergency</h6>
+              <!-- Name -->
+              <div class="input-field">
+                <input type="text" name="emergency_contact_name" id="emergency_name" class="validate">
+                <label for="emergency_name">Name</label>
+              </div>
+              <!-- Relationship Status -->
+              <div class="input-field">
+                <label for="rel_status">Relationship Status</label>
+                <input type="text" name="rel_status" id="rel_status">
+              </div>
+              <!-- Email Address -->
+              <div class="input-field">
+                <input type="text" name="emer_email" class="validate" id="emer_email">
+                <label for="emer_email">Email</label>
+              </div>
+            </div>
+          </div>
+          <!-- Section II -->
+          <div class="hide" id="section_2">
+            <h5 class="sub-heading">Getting to know you better</h5>
+            <!-- Place of birth -->
+            <div class="input-field ip_margin">
+              <input type="text" name="place_of_birth" id="place_of_birth" class="validate">
+              <label for="place_of_birth">Where were you born?</label>
+            </div>
+            <!-- No. of siblings -->
+            <div class="input-field ip_margin">
+              <input type="number" name="no_of_siblings" min="0" id="siblings" class="validate">
+              <label for="siblings">How many siblings do you have?</label>
+            </div>
+            <!-- Childhood Experience Rating -->
+            <div class="range-field ip_margin">
+              <label for="rating">
+                How would you rate your childhood experiences in terms of family, love, school, play, holidays, meals and friends: please rate from 1-10, with 1 being poor and 10 being amazing?
+              </label>
+              <input type="range" id="rating" name="experience_rating" min="1" max="10" class="range">
+            </div>
+            <!-- Role Model -->
+            <div class="input-field ip_margin">
+              <p>Did/do you have any role models?</p>
+              <div>
+                <label for="model_yes">
+                  <input type="radio" name="role_model" id="model_yes" value="yes">
+                  <span>Yes</span>
+                </label>
+              </div>
+              <div>
+                <label for="model_no">
+                  <input type="radio" name="role_model" id="model_no" value="no">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+            <!-- Interested Careers -->
+            <div id="interersted_careers_section ip_margin">
+              <p>In your adolescent years, what three careers interested you?</p>
+              <ol>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="career1" id="career_1" class="validate">
+                    <label for="career_1">Career 1</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="career2" id="career_2" class="validate">
+                    <label for="career_2">Career 2</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="career3" id="career_3" class="validate">
+                    <label for="career_3">Career 3</label>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <!-- Favourite Dish -->
+            <div class="input-field ip_margin">
+              <input type="text" name="fav_dish" id="fav_dish" class="validate height">
+              <label for="fav_dish">What would you say was your favourite meal or dish?</label>
+            </div>
+            <!-- Favourite Reason -->
+            <div class="input-field ip_margin">
+              <!-- <input type="text" name="fav_reason" id="fav_reason" class="validate"> -->
+              <textarea name="fav_reason" class="materialize-textarea" id="fav_reason"></textarea>
+              <label for="fav_reason">What made it your favourite?</label>
+            </div>
+            <!-- No. of friends -->
+            <div class="input-field ip_margin">
+              <input type="number" name="no_of_friends" min="0" id="friends" class="validate">
+              <label for="friends">How many friends do you currently have?</label>
+            </div>
+            <!-- No. of acquaintances -->
+            <div class="input-field ip_margin">
+              <input type="number" name="no_of_acquaintances" min="0" id="acquaintances" class="validate">
+              <label for="acquaintances">How many of them are acquaintances?</label>
+            </div>
+            <!-- Anxiety -->
+            <div class="input-field ip_margin">
+              <p>Do you suffer from anxiety?</p>
+              <div>
+                <label for="anxiety_yes">
+                  <input type="radio" name="anxiety" id="anxiety_yes" value="yes">
+                  <span>Yes</span>
+                </label>
+              </div>
+              <div>
+                <label for="anxiety_no">
+                  <input type="radio" name="anxiety" id="anxiety_no" value="no">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+            <!-- Anxiety Follow-up -->
+            <div class="input-field ip_margin">
+              <!-- <input type="text" id="anxiety_followup" name="anxiety_followup" class="validate"> -->
+              <textarea name="anxiety_followup" class="materialize-textarea" id="anxiety_followup"></textarea>
+              <label for="anxiety_followup">In anxiety, what do you typically resort to?</label>
+            </div>
+            <!-- Three greatest achievements to date -->
+            <div id="achievements_section ip_margin">
+              <p>What would you say are your three greatest achievements to date?</p>
+              <ol>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="achievements1" id="achievement_1" class="validate">
+                    <label for="achievement_1">Achievement 1</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="achievements2" id="achievement_2" class="validate">
+                    <label for="achievement_2">Achievement 2</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="achievements3" id="achievement_3" class="validate">
+                    <label for="achievement_3">Achievement 3</label>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <!-- Challenge Overcome -->
+            <div class="input-field ip_margin">
+              <textarea name="overcome_challenge" class="materialize-textarea height" id="chg_ovrcm"></textarea>
+              <label for="chg_ovrcm">What is the greatest challenge you have had to overcome?</label>
+            </div>
+            <!-- Life Content Rating -->
+            <div class="input-field ip_margin">
+              <textarea name="life_content" class="materialize-textarea height" id="life_content"></textarea>
+              <label for="life_content">How contented are you with your life right now?</label>
+            </div>
+            <!-- Motivation -->
+            <div class="input-field ip_margin">
+              <textarea name="motivation" class="materialize-textarea" id="motivation"></textarea>
+              <label for="motivation">What motivates you?</label>
+            </div>
+            <!-- Thing to "put up" with -->
+            <div id="put_up_with ip_margin">
+              <p>What are three things you have to "put up" with now?</p>
+              <ol>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="thing1" id="thing_1" class="validate">
+                    <label for="thing_1">Thing 1</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="thing2" id="thing_2" class="validate">
+                    <label for="thing_2">Thing 2</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-field">
+                    <input type="text" name="thing3" id="thing_3" class="validate">
+                    <label for="thing_3">Thing 3</label>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <!-- Regrets -->
+            <div class="input-field ip_margin">
+              <p>Do you have any regrets from a personal or career perspective?</p>
+              <div>
+                <label for="regret_yes">
+                  <input type="radio" name="regret" id="regret_yes" value="yes">
+                  <span>Yes</span>
+                </label>
+              </div>
+              <div>
+                <label for="regret_no">
+                  <input type="radio" name="regret" id="regret_no" value="no">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+            <!-- Tough Boss -->
+            <div class="input-field ip_margin">
+              <textarea name="tough_boss" class="materialize-textarea height" id="boss"></textarea>
+              <label for="boss">What in your opinion defines a tough/horrible boss?</label>
+            </div>
+            <!-- Leader -->
+            <div class="input-field ip_margin">
+              <textarea name="leader" class="materialize-textarea height" id="leader"></textarea>
+              <label for="leader">A leader, in your opinion, is someone who is?</label>
+            </div>
+            <!-- Work-life balance -->
+            <div class="input-field ip_margin">
+              <p>What would you choose as a work-life balance in percentage?</p>
+              <div>
+                <label for="50-50">
+                  <input type="radio" name="work_life_balance" id="50-50" value="50-50">
+                  <span>50-50</span>
+                </label>
+              </div>
+              <div>
+                <label for="60-40">
+                  <input type="radio" name="work_life_balance" id="60-40" value="60-40">
+                  <span>60-40</span>
+                </label>
+              </div>
+              <div>
+                <label for="70-30">
+                  <input type="radio" name="work_life_balance" id="70-30" value="70-30">
+                  <span>70-30</span>
+                </label>
+              </div>
+              <div>
+                <label for="80-20">
+                  <input type="radio" name="work_life_balance" id="80-20" value="80-20">
+                  <span>80-20</span>
+                </label>
+              </div>
+            </div>
+            <!-- Relationship Loss -->
+            <div class="input-field ip_margin">
+              <p>Have you experienced relationship loses or deterioration?</p>
+              <div>
+                <label for="loss_yes">
+                  <input type="radio" name="loss" id="loss_yes" value="yes">
+                  <span>Yes</span>
+                </label>
+              </div>
+              <div>
+                <label for="loss_no">
+                  <input type="radio" name="loss" id="loss_no" value="no">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+            <!-- Lost loved one -->
+            <div class="input-field ip_margin">
+              <p>Have you <mark>lost a loved one</mark>?
+                <i class="tiny material-icons tooltipped" data-position="top" data-tooltip="This an important question. Please think twice before answering.">info</i>
+              </p>
+              <div>
+                <label for="lost_loved_yes">
+                  <input type="radio" name="lost_loved" id="lost_loved_yes" value="yes">
+                  <span>Yes</span>
+                </label>
+              </div>
+              <div>
+                <label for="lost_loved_no">
+                  <input type="radio" name="lost_loved" id="lost_loved_no" value="no">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+            <!-- Lost loved one -->
+            <div class="input-field ip_margin">
+              <p>Have you <mark>loved a lost one</mark>?
+                <i class="tiny material-icons tooltipped" data-position="top" data-tooltip="This an important question. Please think twice before answering.">info</i>
+              </p>
+              <div>
+                <label for="loved_lost_yes">
+                  <input type="radio" name="loved_lost" id="loved_lost_yes" value="yes">
+                  <span>Yes</span>
+                </label>
+              </div>
+              <div>
+                <label for="loved_lost_no">
+                  <input type="radio" name="loved_lost" id="loved_lost_no" value="no">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+            <!-- Money -->
+            <div class="input-field ip_margin">
+              <textarea name="money" class="materialize-textarea" id="money"></textarea>
+              <label for="money">Money for you means?</label>
+            </div>
+            <!-- Sacrifices / Compromises -->
+            <div class="input-field ip_margin">
+              <label for="sac_comp">Sacrifice or Compromises or both in your opinion are necessary, and why?</label>
+              <textarea name="sac_comp" class="materialize-textarea height" id="sac_comp"></textarea>
+            </div>
+            <!-- Submit -->
+            <div class="submit">
+              <input type="submit" value="Submit" class="btn waves-effect">
+            </div>
+            </div>
+          </div>
+        </form>
+      </div>
 
-      </main>
+      <!-- Pagination -->
+      <div id="pagination"></div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">About</h5>
+            <p class="grey-text text-lighten-4">
+              About Lorem Ipsum is simply text of the Lorem Ipsum is simply
+              dummy text of the printing and typesetting industry simply dummy
+              text of the printing and typesetting industry. Lorem Ipsum is
+              simply text of the Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry simply dummy text of the
+              printing and typesetting industry.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Navigation</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="#">Support Forum</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="t&c.html"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="privacy-policy.html"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#"
+                  >Help and Support</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2021 ZenMinds Pvt. Ltd.
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+        </div>
+      </div>
+    </footer>
 
 
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <script src="materialize-pagination.js"></script>
       <script>
         // select boxes init
         let elems = document.querySelectorAll('select');
         let instances = M.FormSelect.init(elems, {});
-        
-        // Datepicker init
-        let ele = document.querySelectorAll('.datepicker');
-        let instances_1 = M.Datepicker.init(ele, {});
-        
-        // DOB init
-        let modal_ele = document.querySelector('#modal1');
-        let modal_instance = M.Modal.init(modal_ele, {
-          onCloseEnd: clearInputFields
-        });
 
-        // Autocomplete location init
-        let location_ele = document.querySelector(".autocomplete");
-        let auto_location_instance = M.Autocomplete.init(location_ele, {
+        // Autocomplete qualification
+        let auto_qualification = document.querySelector("#auto-qual");
+        let auto_qualification_instance = M.Autocomplete.init(auto_qualification, {
           data: {
-            "Bangalore": null,
-            "Chennai": null,
-            "Delhi": null,
-            "Hyderabad": null,
-            "Kolkatta": null,
-            "Mumbai": null,
+            "High School": null,
+            "Diploma": null,
+            "Bachelors": null,
+            "Masters": null,
+            "Doctoral": null,
           }
         });
 
-        let job_count = 0;
-        const details_fields = document.querySelectorAll(".modal-content .input");
-        const jobs_container = document.querySelector("#jobs-container");
-        let add_btn = document.querySelector("#add_job");
-        add_btn.addEventListener("click", validate_Add);
-        
-        function validateForm() {
-          // Go through every field and make sure it's not empty
-          let isValid = true;
-          for(let i = 0; i < details_fields.length; i++) {
-            if(!details_fields[i].value.trim()) {
-              details_fields[i].classList.add("invalid");
-              isValid = false;
-            }
+        // Autocomplete nationality + country of residence
+        let country = document.querySelector("#country");
+        let auto_country_instance = M.Autocomplete.init(country, {
+          data: {}
+        });
+
+        // Autocomplete state init
+        let state = document.querySelector(".auto-state");
+        let auto_state_instance = M.Autocomplete.init(state, {
+          data: {}
+        });
+
+        // Autocomplete city init
+        let city = document.querySelector(".auto-city");
+        let auto_city_instance = M.Autocomplete.init(city, {
+          data: {}
+        });
+
+        console.log(country, state, city);
+
+        const section_1 = document.querySelector("#section_1");
+        const section_2 = document.querySelector("#section_2");
+
+        $("#pagination").materializePagination({
+          align: "center",
+          firstPage: 1,
+          lastPage: 2,
+          useUrlParameter: false,
+          onClickCallback: (req_page) => {
+            section_1.classList.toggle("hide");
+            section_2.classList.toggle("hide");
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
           }
-          console.log(isValid);
-          return isValid;
-        }
+        });
 
-        function validate_Add(event) {
-          event.preventDefault();
-          // If the form is not valid, do nothing
-          if(!validateForm()) return;
+        // AJAX requests
 
-          // Else add the fields entered
-          console.log("Form is valid. Can add the job detail now");
+        // Country Init
+        fetch(`location.php?q=countries`)
+          .then((response) => response.json())
+          .then((data) => {
+              auto_country_instance.updateData(data)
+              state.value = "";
+              city.value = "";
+            });
 
-          let job = document.createElement("div");
-          job.setAttribute("id", `job-${job_count}`);
-          job.classList.add("card");
-          job.innerHTML = 
-                `<div class="card-content">
-                    <span class="card-title">${details_fields[0].value}</span>
-                    <p>${details_fields[1].value}</p>
-                    <p>${details_fields[2].value}</p>
-                    <p>${details_fields[3].value} - ${details_fields[4].value}</p>
-                    <p>${details_fields[5].value}</p>
-                  </div>
-                  <div class="card-action">
-                    <button class="btn waves-effect waves-light teal"><i class="material-icons">edit</i></button>
-                    <button class="btn halfway-fab waves-effect waves-light red" onclick="delete_job('job-${job_count}')"><i class="material-icons">delete</i></button>
-                  </div>`;
-          jobs_container.appendChild(job);
-          modal_instance.close();
-          job_count++;
-        }
+        country.addEventListener("change", (event) =>{
+          if(country.value.length == 0) {
+            return;
+          }
+          else {
+            fetch(`location.php?q=states&country=${country.value}`)
+              .then((response) => response.json())
+              .then((data) => {
+                auto_state_instance.updateData(data)
+                city.value = "";
+              });
+          }
+        });
 
-        function delete_job(id) {
-          document.getElementById(id).remove();
-        }
+        state.addEventListener("change", (event) =>{
+          if(state.value.length == 0) {
+            return;
+          }
+          else {
+            fetch(`location.php?q=cities&state=${state.value}`)
+              .then((response) => response.json())
+              .then((data) => {
+                auto_city_instance.updateData(data)
+              });
+          }
+        });
 
-        function clearInputFields() {
-          details_fields.forEach((field) => {
-            field.value = "";
-            field.classList.remove("valid", "invalid");
-            document.querySelectorAll(".modal-content label").forEach((val) => val.classList.remove("active"));
-          });
-        }
+        //   Sidenav init
+        var elems_2 = document.querySelectorAll(".sidenav");
+        var instances_2 = M.Sidenav.init(elems_2);
+
+        //   Dropdown init
+        var elems_1 = document.querySelectorAll(".dropdown-trigger");
+        var instances_1 = M.Dropdown.init(elems_1);
+
+        // Tooltip init
+        var elems_3 = document.querySelectorAll('.tooltipped');
+        var instances_3 = M.Tooltip.init(elems_3);
       </script>
     </body>
   </html>

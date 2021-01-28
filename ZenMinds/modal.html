@@ -1,0 +1,161 @@
+<div id="jobs-container"></div>
+<!-- Modal Trigger -->
+<button data-target="modal1" class="btn modal-trigger">Add Job</button>
+<!--Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content container">
+    <h5 class="center-align sub-heading">Job Details</h5>
+    <div id="job-details">
+      <div class="input-field">
+        <input
+          type="text"
+          name="job_title"
+          class="validate input"
+          id="job_title"
+        />
+        <label for="job_title">Job Title</label>
+        <span
+          class="helper-text"
+          data-error="This field is required"
+          data-success=""
+          >Your Offical Job Title</span
+        >
+      </div>
+      <div class="input-field">
+        <input
+          type="text"
+          name="organization"
+          class="validate input"
+          id="organization"
+        />
+        <label for="organization">Organization</label>
+        <span
+          class="helper-text"
+          data-error="This field is required"
+          data-success=""
+          >Your Company Name</span
+        >
+      </div>
+      <div class="input-field">
+        <input
+          type="text"
+          name="city"
+          class="autocomplete auto-city input"
+          id="autocomplete-location"
+        />
+        <label for="autocomplete-location">Location</label>
+        <span
+          class="helper-text"
+          data-error="This field is required"
+          data-success=""
+          >Your Company Location (City)</span
+        >
+      </div>
+      <!-- start & end date container -->
+      <div class="row">
+        <div class="col s12 l6">
+          <div class="input-field">
+            <input
+              type="text"
+              name="start_date"
+              class="datepicker input"
+              id="start-date"
+            />
+            <label for="start-date">Start Date</label>
+            <span
+              class="helper-text"
+              data-error="This field is required"
+              data-success=""
+              >When did you start working here?</span
+            >
+          </div>
+        </div>
+        <div class="col s12 l6">
+          <div class="input-field">
+            <input
+              type="text"
+              name="end_date"
+              class="datepicker input"
+              id="end-date"
+            />
+            <label for="end-date">End Date</label>
+            <span
+              class="helper-text"
+              data-error="This field is required"
+              data-success=""
+              >When did you leave this company?</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Job Description -->
+      <div class="input-field">
+        <textarea
+          name="job_descriptipn"
+          id="job-description"
+          class="materialize-textarea input"
+        ></textarea>
+        <label for="job-description">Job Description</label>
+        <span
+          class="helper-text"
+          data-error="This field is required"
+          data-success=""
+          >Briefly describe what you do/did here</span
+        >
+      </div>
+      <!-- Submit Button -->
+      <div class="col s12 l6 offset-l3" id="details_btns">
+        <input type="" class="btn waves-effect-light" id="add_job" />
+        <button class="modal-close btn red">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer"></div>
+</div>
+
+<!-- modal -->
+
+let job_count = 0; const details_fields =
+document.querySelectorAll(".modal-content .input"); const jobs_container =
+document.querySelector("#jobs-container"); let add_btn =
+document.querySelector("#add_job"); add_btn.addEventListener("click",
+validate_Add); function validateForm() { // Go through every field and make sure
+it's not empty let isValid = true; for(let i = 0; i < details_fields.length;
+i++) { if(!details_fields[i].value.trim()) {
+details_fields[i].classList.add("invalid"); isValid = false; } }
+console.log(isValid); return isValid; } let job_details = []; function
+validate_Add(event) { event.preventDefault(); // If the form is not valid, do
+nothing if(!validateForm()) return; // Else add the fields entered
+console.log("Form is valid. Can add the job detail now"); let job =
+document.createElement("div"); job.setAttribute("id", `job-${job_count}`);
+job.classList.add("card"); job.innerHTML = `
+<div class="card-content">
+  <span class="card-title">${details_fields[0].value}</span>
+  <p>${details_fields[1].value}</p>
+  <p>${details_fields[2].value}</p>
+  <p>${details_fields[3].value} - ${details_fields[4].value}</p>
+  <p>${details_fields[5].value}</p>
+</div>
+<div class="card-action">
+  <button class="btn waves-effect waves-light teal">
+    <i class="material-icons">edit</i>
+  </button>
+  <button
+    class="btn halfway-fab waves-effect waves-light red"
+    onclick="delete_job('job-${job_count}')"
+  >
+    <i class="material-icons">delete</i>
+  </button>
+</div>
+`; jobs_container.appendChild(job); modal_instance.close(); // Save job detail
+as obj in array let job_obj = {}; job_obj.id = job_count; for(let i = 0; i <
+details_fields.length; i++) { job_obj[details_fields[i].name] =
+details_fields[i].value; } job_details.push(job_obj); job_count++; } function
+delete_job(id) { document.getElementById(id).remove(); console.log(id);
+job_details.filter((val) => console.log(val.id)); } function clearInputFields()
+{ details_fields.forEach((field) => { field.value = "";
+field.classList.remove("valid", "invalid");
+document.querySelectorAll(".modal-content label").forEach((val) =>
+val.classList.remove("active")); }); }
+document.querySelector("#job-details").addEventListener("submit", (event) =>
+event.preventDefault());
